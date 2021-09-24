@@ -7,20 +7,15 @@ import copy
 import itertools
 
 
-def get_even_keys(dictionary):
-	return {}
+get_even_keys = lambda dictionary : {x for x,y in dictionary.items() if not x%2}
 
-def join_dictionaries(dictionaries):
-	return {}
+join_dictionaries = lambda dictionaries : {k:v for d in dictionaries for k, v in d.items()}
 
-def dictionary_from_lists(keys, values):
-	return {}
+dictionary_from_lists = lambda keys, values : {keys[x]:values[x] for x in range(max(len(keys), len(values))-1)}
 
-def get_greatest_values(dictionnary, num_values):
-	return []
+get_greatest_values = lambda dictionnary, num_values : sorted(dictionnary.values())[-num_values:]
 
-def get_sum_values_from_key(dictionnaries, key):
-	return 0
+get_sum_values_from_key = lambda dictionnaries, key : sum([v for d in dictionnaries for k,v in d.items() if k==key])
 
 
 if __name__ == "__main__":
